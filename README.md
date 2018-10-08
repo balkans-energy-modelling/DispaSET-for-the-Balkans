@@ -12,7 +12,6 @@ Countries included in different scenarios are show in the table:
 |   2015    |    X    |          X             |    X    |    X   |     X     |      X     |    X   |     X    |  
 
 The model has the ability to describe every single unit, or a cluster of units powered by the same fuel type and technology, with a high level of detail can be modelled together with a large number of RES units with separate hourly distribution curves.
-
  
 ### Features
 The model is expressed as an optimization problem. Continuous variables include the individual unit dispatched power, the shedded load and the curtailed power generation. The binary variables are the commitment status of each unit. The main model features can be summarized as follows:
@@ -33,6 +32,31 @@ The model is expressed as an optimization problem. Continuous variables include 
 
 The demand is assumed to be inelastic to the price signal. The MILP objective function is therefore the total generation cost over the optimization period. 
 
+### Quick start
+
+- Download the latest version from github
+- Make sure that you have git and the [anaconda distribution](https://www.continuum.io/downloads) installed and type the following:
+
+```bash
+git clone https://github.com/energy-modelling-toolkit/Dispa-SET.git
+cd Dispa-SET
+conda env create  # Automatically creates environment based on environment.yml
+source activate dispaset # in Windows: activate dispaset
+pip install -e . # Install editable local version
+```
+
+The above commands create a dedicated environment so that your anconda configuration remains clean from the required dependencies installed.
+To check that everything runs fine, you can build and run a test case by typing:
+```bash
+dispaset -c ConfigFiles/ConfigTest.xlsx build simulate
+```
+
+- Make sure that the path is changed to local Dispa-SET folder in folowing scripts (the procedure is provided in the scripts)
+```bash
+  - build_and_run.py
+  - read_results.py
+```
+  
 ### Documentation
 The general documentation of the Dispa-SET model and the stable releases are available on the main Dispa-SET website: http://www.dispaset.eu
 
