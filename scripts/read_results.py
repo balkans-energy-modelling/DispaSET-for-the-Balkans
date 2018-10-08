@@ -9,6 +9,10 @@ Minimalist example file showing how to read the results of a Dispa-SET run
 import os
 os.chdir('..')
 
+# Change path in the sys.path.append('..')  to the local root folder of Dispa-SET: to e.a. to C:\Documents\...\dispa-EU
+import sys
+sys.path.append('C:\Users\...\dispa-EU')
+
 # Import Dispa-SET
 import DispaSET as ds
 

@@ -14,17 +14,17 @@ os.chdir('..')
 
 # Change path in the sys.path.append('..')  to the local root folder of Dispa-SET: to e.a. to C:\Documents\...\dispa-EU
 import sys
-sys.path.append('C:\Users\...\Documents\dispa-EU')
+sys.path.append('C:\Users\...\dispa-EU')
 
 # Import Dispa-SET
 import DispaSET as ds
 
 # Load the configuration file
-config = ds.load_config_excel('ConfigFiles/ConfigWB_2015.xlsx')
+config = ds.load_config_excel('ConfigFiles/ConfigWB_2010.xlsx')
 
 # Build the simulation environment:
 SimData = ds.build_simulation(config)
 
 # Solve using PYOMO/GAMS:
 #r = ds.solve_pyomo(config['SimulationDirectory'])
-#r = ds.solve_GAMS(config['SimulationDirectory'], config['GAMS_folder'])
+r = ds.solve_GAMS(config['SimulationDirectory'], config['GAMS_folder'])
